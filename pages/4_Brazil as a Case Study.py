@@ -2,28 +2,14 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import numpy as np
+from modules.shared_config import setup_page
 
-# Set the page configuration
-st.set_page_config(
-    layout="wide",
-    page_title="GovSafe: Sextortion Mitigation WebApp",
-    page_icon="https://github.com/ArtisticControl/Platform/blob/main/favicon.png?raw=true",
-    initial_sidebar_state="expanded"
-)
+setup_page()
 
-# Load the CSS from the external stylesheet
-with open("css/style.css") as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
-# Bottom of Sidebar Configuration
-st.sidebar.markdown("**Developed by:** [Dr Fernando Forattini](https://fernandoforattini.com)" + "\n**Supported by:**")
-st.sidebar.image("https://github.com/ArtisticControl/Platform/blob/main/symeco_logo.png?raw=true", use_column_width=True)
-
-#End of Sidebar Configuration ------
-
-st.markdown('### Brazilian Indicators Used by This Study')
+st.markdown('## Brazilian Socioeconomic and Health Indicators')
 
 def main():
+    st.markdown('### Data Selection and Visualization Preferences')
     # Creating two columns for the menu
     col1, col2, col3 = st.columns((2, 5, 3))
     
@@ -47,7 +33,11 @@ def main():
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("### Violence Against Women")
+        st.markdown("#### Analysis of Violence Against Women")
+        st.markdown("""
+        This map visualization highlights geographical distribution of violence against women across Brazil, 
+        enabling insights into regional patterns and hotspots.
+        """)
         #st.map(braz_df, zoom=3.3, color= '#0044ff')
         df = pd.DataFrame(
             np.random.randn(500, 2) / [0.25, 0.3] + [-13, -50],
@@ -64,7 +54,11 @@ def main():
 
     #Histogram
     with col2:
-        st.markdown("### Presence of 'Corruption' in Political Discourses (by Party)")
+        st.markdown("#### 'Corruption' in Political Discourse Analysis")
+        st.markdown("""
+        Explore the presence of 'corruption' within political discourses by party, 
+        providing a visual overview of how frequently this theme appears and its potential implications.
+        """)
         df = px.data.iris()
         fig = px.scatter(
             df,
@@ -80,7 +74,12 @@ def main():
             st.plotly_chart(fig, theme=None, use_container_width=True)
 
     # Another Row
-    st.markdown("### Relation Between Female Life Expectancy, GDPperCap and Population (Per Country)")
+    # Comparative Analysis of Socioeconomic Indicators
+    st.markdown("#### Socioeconomic Indicators and Female Life Expectancy")
+    st.markdown("""
+    This section offers a comparative view of female life expectancy against GDP per capita and population size, 
+    highlighting how economic factors correlate with health outcomes across different nations.
+    """)
     df = px.data.gapminder()
 
     fig = px.scatter(

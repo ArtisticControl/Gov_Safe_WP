@@ -1,64 +1,56 @@
 import streamlit as st
+from modules.shared_config import setup_page
 
-# Set the page configuration
-st.set_page_config(
-    layout="wide",
-    page_title="GovSafe: Sextortion Mitigation WebApp",
-    page_icon="https://github.com/ArtisticControl/Platform/blob/main/favicon.png?raw=true",
-    initial_sidebar_state="expanded"
-)
-
-# Load the CSS from the external stylesheet
-with open("css/style.css") as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
-# Bottom of Sidebar Configuration
-st.sidebar.markdown("**Developed by:** [Dr Fernando Forattini](https://fernandoforattini.com)" + "\n**Supported by:**")
-st.sidebar.image("https://github.com/ArtisticControl/Platform/blob/main/symeco_logo.png?raw=true", use_column_width=True)
-
-#End of Sidebar Configuration ------
+setup_page()
 
 st.title("About our Project")
 
 st.divider()
 
 st.markdown(
-    """
-    This GovTech initiative engages in a comprehensive study aimed at mitigating the pernicious phenomenon of sextortion,
-    while simultaneously advancing the efficacy of public service delivery. Executed through a collaborative effort, the project
-    involves entities of academic and research excellence such as [Lero](https://lero.ie/),
-    the [DCU Business School's](https://www.dcu.ie/dcubs/dcu-business-school), [Anti-corruption Research Centre](https://www.dcu.ie/arc)
-    and [Corruption, Gender, and Sustainable Development (COGS)](https://www.dcu.ie/arc/cogs), helmed by Dr. Fernando Forattini,
-    tutored by Prof. Regina Connolly, and Prof. Robert Gillanders. Financial backing for this endeavor is provided by the [SyMeCo Post-Doctoral Fellowship at Lero](https://symeco.lero.ie/).
+"""
+At the intersection of governance and technology, this GovTech initiative takes a decisive stand against sextortion. Our comprehensive study aims
+not only to confront this pernicious issue but also to elevate public service delivery to new standards of integrity and efficiency. Spearheaded by
+Dr. Fernando Forattini and guided by the expert tutelage of Prof. Regina Connolly and Prof. Robert Gillanders, our project is a concerted effort
+among renowned academic and research entities. With the generous support of the SyMeCo Post-Doctoral Fellowship at [Lero](https://lero.ie/),
+the [DCU Business School's](https://www.dcu.ie/dcubs/dcu-business-school), [Anti-corruption Research Centre](https://www.dcu.ie/arc)
+and [Corruption, Gender, and Sustainable Development (COGS)](https://www.dcu.ie/arc/cogs) we delve into the critical
+task of creating an ethical governance model free from the influence of sextortion.
 """
 )
+
 st.subheader("Participants")
 st.markdown(
     """
-    - **Dr. Fernando Forattini:** Main Researcher. \n
-    - **Prof. Regina Connolly:** Tutor.\n
-    - **Prof. Robert Gillanders:** Tutor. \n
-    - **Lero:** An interdisciplinary research center with an emphasis on advanced software systems and societal ramifications.\n
-    - **DCU Business School:** A critical partner contributing governance and managerial insights to the project. \n
-    - **Anti-corruption Research Centre and Corruption, Gender, and Sustainable Development (COGS)**: DCU Business School's centers on Anti-Corruption.
+    - **Dr. Fernando Forattini:** *main researcher*, driving forward the investigation into sextortion's impact on public services.\n
+    - **Prof. Regina Connolly:** *Tutor.* A distinguished scholar in information systems and expert in the area of Public Sector digital, whose insights into digital
+    governance and societal implications enrich the project's approach to developing solutions.\n
+    - **Prof. Robert Gillanders:** *Co-Tutor.* Renowned for his expertise in corruption and its economic impacts, Dr. Gillanders'
+    scholarship critically informs our research trajectory.\n
+    - **Lero & DCU Business School:** Our collaborative partners contribute advanced software systems understanding and managerial acumen, essential
+    to the project's overarching goals.
+    - **Anti-corruption Research Centre and Corruption, Gender, and Sustainable Development (COGS)**: At DCU, these centers are at the vanguard of
+    anti-corruption research, providing the project with a rich bedrock of expertise and knowledge.\n
 """
 )
 
 st.subheader("Objectives and Importance")
-st.markdown("""
-    Sextortion poses a severe threat to the integrity of public services and serves as an obstruction to gender equity. Its existence
-    erodes public trust and hampers the optimal allocation and delivery of resources. This project endeavors to combat sextortion through
-    empirical research and technological innovation, thereby contributing to ethical governance and inclusive public administration. 
+st.markdown(
+"""
+Addressing the insidious impact of sextortion is central to our mission, as it threatens public trust and obstructs the path to gender equity. This project is committed to:
+- Conducting in-depth empirical research to unearth the mechanisms of sextortion.
+- Leveraging innovative technology to establish robust ethical governance frameworks.\n
+Our objective is to pave the way for inclusive and transparent public administration, fortified against the exploitation of power.
 """
 )
 
 st.subheader("Platform Description")
-st.markdown("The digital platform functions as the nexus for all project-related activities and resources. It serves multiple purposes:")
 st.markdown(
-    """
-    \t- To grant stakeholders access to real-time updates and empirically collected data.\n
-    - To integrate a secure whistleblowing mechanism, fortified by blockchain technology, into the governance infrastructure.\n
-    - To enable scholarly discourse and stakeholder engagement through specialized forums and discussion avenues.\n
-    This platform is designed for policymakers, academicians, sector-specific experts interested in the intersection of GovTech, ethics, and public administration, and general public.
+"""
+Our digital platform stands as the confluence of our multifaceted activities, designed to:
+- Provide stakeholders with empirical data and updates in real time.
+- Incorporate a secure, blockchain-enabled whistleblowing feature within governance structures.
+- Facilitate rigorous academic dialogue and stakeholder interaction through dedicated forums.
+Policymakers, scholars, sector-specific experts, and citizens are invited to explore and engage with the platform, contributing to a collective effort towards a governance landscape imbued with integrity and accountability.
 """
 )

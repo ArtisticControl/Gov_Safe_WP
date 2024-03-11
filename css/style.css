@@ -1,10 +1,11 @@
+
 /* Logo */
 [data-testid="stSidebar"] {
-    background-image: url(https://github.com/ArtisticControl/Platform/blob/7cd36c651fd7abd9efdd7c88a3c79b1966e149bd/side_icon.png?raw=true);
+    background-image: url(https://raw.githubusercontent.com/ArtisticControl/assets/main/side_icon.png);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: top 2vh center;
-    padding-top: 12vh;
+    background-position: top 1.5vh center;
+    padding-top: 15vh;
 }
 
 /* Sidebar Menu Height */
@@ -24,4 +25,14 @@ body {
     text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgb(0, 0, 0);
     -webkit-font-smoothing: auto;
+}
+
+/* Attempt to target map container */
+.stMarkdown, .stDataFrame, .stMap, .leaflet-container {
+    width: 100% !important;
+    height: auto !important;
+}
+
+iframe {
+    width: 100% !important;
 }
